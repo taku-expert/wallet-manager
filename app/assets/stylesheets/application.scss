@@ -1,0 +1,16 @@
+@import "./reset";
+@import "font-awesome-sprockets";
+@import "./font-awesome";
+@import "./header";
+@import "./content-wrapper";
+
+* {
+  border-radius: 30px;
+  }
+.wrapper {
+  height: calc(100vh - 40px);
+  width: calc(100vw - 40px);
+  border-radius: 0;
+  background: linear-gradient(#eccba0, #dbad4b);
+  padding: 20px;
+}
