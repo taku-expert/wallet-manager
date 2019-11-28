@@ -1,15 +1,25 @@
 .contents-wrapper
   .leftbox
     .leftbox-top.box
+      %p Taku
+      .config-btn
+        = link_to edit_user_registration_path do
+          %i.fas.fa-puzzle-piece
     .leftbox-bottom.box
-      %ul
-        %li.pink ピンク●
-        %li.blue ブルー●
-        %li.orange オレンジ●
-        %li.green グリーン●
-        %li.purple パープル●
   .contents
     .contents-main.box
+    .contents-bottom.box
+      .form
+        .title
+          %input{type: "text",placeholder: "何を買ったの？"}
+          %i.fas.fa-cart-plus.fa-lg.fa-fw{"aria-hidden" => "true"}
+        .price
+          %input{type: "number",placeholder: "いくらだったの？"}
+          %i.fas.fa-yen-sign.fa-lg.fa-fw{"aria-hidden" => "true"}
+        .submit
+          %label
+            %input{type: "submit"}
+            %i.far.fa-arrow-alt-circle-up.fa-lg.fa-fw{"aria-hidden" => "true"}
   .rightbox
     .rightbox-top.box
     .rightbox-bottom.box

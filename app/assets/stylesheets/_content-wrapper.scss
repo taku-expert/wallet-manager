@@ -1,71 +1,175 @@
 .contents-wrapper {
-  height: calc(100% - 265px);
+  height: calc(100% - 200px);
   width: 100%;
   display: flex;
+  padding: 20px;
+
   .box {
     background-color: #ffffffa6;
-    box-shadow: 4px 4px 6px #dbad4b;
-    /* opacity: 0.5; */
   }
+
   .leftbox {
     height: 100%;
     width: 300px;
-    padding: 15px;
     &-top {
-      height: 60px;
-      width: 100%;
+      height: 50px;
+      display: flex;
+      padding: 0 10px;
+      justify-content: space-between;
+      p {
+        color: #272c32;
+        font-size: 15px;
+        font-weight: 900;
+        line-height: 50px;
+        float: left;
+        width: 100%;
+        text-align: center;
+      }
+      .config-btn {
+        float: right;
+        line-height: 50px;
+        i {
+          font-size: 25px;
+          color: #272c32;
+        }
+      }
     }
     &-bottom {
-      height: calc(100% - 80px);
-      width: 100%;
+      height: calc(100% - 50px);
       margin-top: 15px;
     }
-    li {
-      list-style: none;
-      font-size: 40px;
-      margin-top: 20px;
-    }
-    .pink {
-      color: #e96f89;
-    }
-    .blue {
-      color: #67a5da;
-    }
-    .orange {
-      color: #f18d1d;
-    }
-    .green {
-      color: #839c74;
-    }
-    .purple {
-      color: #a379d3;
-    }
+  //   li {
+  //     list-style: none;
+  //     font-size: 40px;
+  //   }
+  //   .pink {
+  //     color: #f87481;
+  //   }
+  //   .blue {
+  //     color: #48bfbb;
+  //   }
+  //   .orange {
+  //     color: #f4aa31;
+  //   }
+  //   .purple {
+  //     color: #d375ef;
+  //   }
+  // }
   }
   .contents {
     height: 100%;
-    width: calc(100% - 600px);
-    margin: 0 20px;
-    padding: 15px;
+    width: 100%;
+    margin: 0 10px;
     &-main {
-      height: calc(100% - 70px);
+      height: calc(100% - 50px);
+    }
+    .contents-bottom {
+      height: 50px;
+      margin-top: 10px;
+      padding: 5px;
+      .form {
+        height: 40px;
+        display: flex;
+        .title {
+          width: 100%;
+          height: 40px;
+          position: relative;
+          input[type='text'] {
+            font-size: 20px;
+            line-height: 30px;
+            width: 100%;
+            padding-left: 40px;
+            letter-spacing: 1px;
+            border: 0;
+            margin-top: 5px;
+            background-color: transparent;
+            &:focus {
+              outline: none;
+            }
+          }
+          i {
+            position: absolute;
+            top: 13px;
+            left: 5px;
+            padding-right: 5px;
+          }
+          &::after {
+            display: block;
+            width: 100%;
+            height: 4px;
+            margin-top: -5px;
+            content: '';
+            border-width: 0 2px 1px 2px;
+            border-style: solid;
+            border-color: #272c32;
+          }
+        }
+
+        .price {
+          width: 300px;
+          height: 40px;
+          margin-left: 10px;
+          position: relative;
+          input[type=number]::-webkit-inner-spin-button,
+          input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+          }
+          input[type='number'] {
+            font-size: 20px;
+            line-height: 30px;
+            width: 100%;
+            padding-left: 30px;
+            letter-spacing: 1px;
+            border: 0;
+            margin-top: 5px;
+            background-color: transparent;
+            &:focus {
+              outline: none;
+            }
+          }
+          i {
+            position: absolute;
+            top: 13px;
+            left: 5px;
+            padding-right: 5px;
+          }
+          &::after {
+            display: block;
+            width: 100%;
+            height: 4px;
+            margin-top: -5px;
+            content: '';
+            border-width: 0 2px 1px 2px;
+            border-style: solid;
+            border-color: #272c32;
+          }
+        }
+        .submit {
+          width: 90px;
+          height: 40px;
+          margin-left: 10px;
+          input {
+            display: none;
+          }
+          i {
+            cursor: pointer;
+            font-size: 40px;
+            line-height: 40px;
+          }
+        }
+      }
     }
   }
   .rightbox {
     height: 100%;
     width: 300px;
-    padding: 15px;
     &-top {
-      height: 48%;
-      width: 100%;
+      height: 50%;
     }
     &-bottom {
-      height: 48%;
-      width: 100%;
+      height: 50%;
       margin-top: 15px;
     }
   }
 }
-
-
-
-
