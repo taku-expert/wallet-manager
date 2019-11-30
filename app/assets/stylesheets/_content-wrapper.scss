@@ -21,7 +21,7 @@
         font-size: 15px;
         font-weight: 900;
         line-height: 50px;
-        float: left;
+        // float: left;
         width: 100%;
         text-align: center;
       }
@@ -29,32 +29,22 @@
         float: right;
         line-height: 50px;
         i {
-          font-size: 25px;
+          margin-top: 10px;
+          font-size: 30px;
           color: #272c32;
         }
       }
     }
-    &-bottom {
-      height: calc(100% - 50px);
+    &-middle {
+      height: calc(50% - 65px);
       margin-top: 15px;
+      border: solid 10px #f4aa31;
     }
-  //   li {
-  //     list-style: none;
-  //     font-size: 40px;
-  //   }
-  //   .pink {
-  //     color: #f87481;
-  //   }
-  //   .blue {
-  //     color: #48bfbb;
-  //   }
-  //   .orange {
-  //     color: #f4aa31;
-  //   }
-  //   .purple {
-  //     color: #d375ef;
-  //   }
-  // }
+    &-bottom {
+      height: 50%;
+      margin-top: 15px;
+      border: solid 10px #d375ef;
+    }
   }
   .contents {
     height: 100%;
@@ -75,7 +65,7 @@
           height: 40px;
           position: relative;
           input[type='text'] {
-            font-size: 20px;
+            font-size: 15px;
             line-height: 30px;
             width: 100%;
             padding-left: 40px;
@@ -116,7 +106,7 @@
           margin: 0;
           }
           input[type='number'] {
-            font-size: 20px;
+            font-size: 15px;
             line-height: 30px;
             width: 100%;
             padding-left: 30px;
@@ -145,6 +135,36 @@
             border-color: #272c32;
           }
         }
+        
+        .radioBtn {
+          width: 300px;
+          height: 40px;
+          display: flex;
+          justify-content: space-between;
+          margin-left: 20px;
+          align-items: center;
+          label {
+            height: 40px;
+            width: 40px;
+            border-radius: 20px;
+            margin: 0 5px;
+            display: flex;
+            cursor: pointer;
+            input {
+              display: none;
+            }
+          }
+          .pink-btn {
+            background-color: #f87481;
+          }
+          .blue-btn {
+            background-color: #48bfbb;
+          }
+          .purple-btn {
+            background-color: #d375ef;
+          }
+        }
+
         .submit {
           width: 90px;
           height: 40px;
@@ -166,10 +186,26 @@
     width: 300px;
     &-top {
       height: 50%;
+      border: solid 10px #48bfbb;
     }
     &-bottom {
       height: 50%;
       margin-top: 15px;
+      border: solid 10px #f87481;
     }
   }
 }
+
+//   .pink {
+//     color: #f87481;
+//   }
+//   .blue {
+//     color: #48bfbb;
+//   }
+//   .orange {
+//     color: #f4aa31;
+//   }
+//   .purple {
+//     color: #d375ef;
+//   }
+// }

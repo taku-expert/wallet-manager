@@ -4,7 +4,8 @@
       %p Taku
       .config-btn
         = link_to edit_user_registration_path do
-          %i.fas.fa-puzzle-piece
+          %i.fas.fa-wrench
+    .leftbox-middle.box
     .leftbox-bottom.box
   .contents
     .contents-main.box
@@ -16,6 +17,13 @@
         .price
           %input{type: "number",placeholder: "いくらだったの？"}
           %i.fas.fa-yen-sign.fa-lg.fa-fw{"aria-hidden" => "true"}
+        .radioBtn
+          %label.pink-btn
+            %input{name: "colorBtn", type: "radio", value: "pink"} 
+          %label.blue-btn
+            %input{name: "colorBtn", type: "radio", value: "blue"}
+          %label.purple-btn
+            %input{name: "colorBtn", type: "radio", value: "purple"}
         .submit
           %label
             %input{type: "submit"}
