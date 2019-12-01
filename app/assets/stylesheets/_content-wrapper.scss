@@ -150,8 +150,17 @@
             margin: 0 5px;
             display: flex;
             cursor: pointer;
-            input {
-              display: none;
+            &:hover {
+              width: 80%;
+            }
+            input[type="radio"] {
+              height: 40px;
+              margin: 0 auto;
+              &:checked {
+                height: 40px;
+                width: 80%;
+                display: none;
+              }
             }
           }
           .pink-btn {
