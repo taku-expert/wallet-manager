@@ -1,0 +1,39 @@
+.contents-wrapper
+  .leftbox
+    .leftbox-top.box
+      %p Taku
+      .config-btn
+        = link_to edit_user_registration_path do
+          %i.fas.fa-wrench
+    .leftbox-middle.box
+    .leftbox-bottom.box
+  .contents
+    .contents-main.box
+      -@wallets.each do |wallet|
+        .content
+          .content-title
+            =wallet.title
+          .content-price
+            =wallet.price
+    .contents-bottom.box
+      .form
+        .title
+          %input{type: "text",placeholder: "何を買ったの？"}
+          %i.fas.fa-cart-plus.fa-lg.fa-fw{"aria-hidden" => "true"}
+        .price
+          %input{type: "number",placeholder: "いくらだったの？"}
+          %i.fas.fa-yen-sign.fa-lg.fa-fw{"aria-hidden" => "true"}
+        .radioBtn
+          %label.pink-btn
+            %input{name: "colorBtn", type: "radio", value: "pink"} 
+          %label.blue-btn
+            %input{name: "colorBtn", type: "radio", value: "blue"}
+          %label.purple-btn
+            %input{name: "colorBtn", type: "radio", value: "purple"}
+        .submit
+          %label
+            %input{type: "submit"}
+            %i.far.fa-arrow-alt-circle-up.fa-lg.fa-fw{"aria-hidden" => "true"}
+  .rightbox
+    .rightbox-top.box
+    .rightbox-bottom.box
