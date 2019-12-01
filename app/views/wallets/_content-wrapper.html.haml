@@ -9,6 +9,12 @@
     .leftbox-bottom.box
   .contents
     .contents-main.box
+      -@wallets.each do |wallet|
+        .content
+          .content-title
+            =wallet.title
+          .content-price
+            =wallet.price
     .contents-bottom.box
       .form
         .title

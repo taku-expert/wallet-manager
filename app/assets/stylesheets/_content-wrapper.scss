@@ -52,6 +52,25 @@
     margin: 0 10px;
     &-main {
       height: calc(100% - 50px);
+      padding: 15px;
+      .content {
+        height: 60px;
+        text-align: center;
+        display: flex;
+        justify-content: flex-start;
+        &-title {
+          position: absolute;
+          font-size: 30px;
+          color: #f4aa31;
+        }
+        &-price {
+          position: relative;
+          right: -115px;
+          top: 10px;
+          font-size: 20px;
+          color: #f4aa31;
+        }
+      }
     }
     .contents-bottom {
       height: 50px;
