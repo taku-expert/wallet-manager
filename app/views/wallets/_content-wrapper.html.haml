@@ -17,23 +17,33 @@
             =wallet.price
     .contents-bottom.box
       .form
-        .title
-          %input{type: "text",placeholder: "何を買ったの？"}
-          %i.fas.fa-cart-plus.fa-lg.fa-fw{"aria-hidden" => "true"}
-        .price
-          %input{type: "number",placeholder: "いくらだったの？"}
-          %i.fas.fa-yen-sign.fa-lg.fa-fw{"aria-hidden" => "true"}
-        .radioBtn
-          %label.pink-btn
-            %input{name: "colorBtn", type: "radio", value: "pink"} 
-          %label.blue-btn
-            %input{name: "colorBtn", type: "radio", value: "blue"}
-          %label.purple-btn
-            %input{name: "colorBtn", type: "radio", value: "purple"}
-        .submit
-          %label
-            %input{type: "submit"}
-            %i.far.fa-arrow-alt-circle-up.fa-lg.fa-fw{"aria-hidden" => "true"}
+        = form_for @wallet, url: wallets_path do |f|
+          = f.label :title, class: 'form-title-mask' do
+            = f.text_field :title, class: 'form-title', placeholder: '何を買ったの？'
+            = icon('fas', 'cart-plus', class: 'icon')
+          = f.label :price, class: 'form-price-mask' do
+            = f.number_field :price, class: 'form-price', placeholder: 'いくらだったの？'
+            = icon('fas', 'yen-sign', class: 'icon')
+          
+          = f.submit '登録', class: 'form__submit'
   .rightbox
     .rightbox-top.box
     .rightbox-bottom.box
+
+-# .title
+-#   %input{type: "text",placeholder: "何を買ったの？"}
+-#   %i.fas.fa-cart-plus.fa-lg.fa-fw{"aria-hidden" => "true"}
+-# .price
+-#   %input{type: "number",placeholder: "いくらだったの？"}
+-#   %i.fas.fa-yen-sign.fa-lg.fa-fw{"aria-hidden" => "true"}
+-# .radioBtn
+-#   %label.pink-btn
+-#     %input{name: "colorBtn", type: "radio", value: "pink"} 
+-#   %label.blue-btn
+-#     %input{name: "colorBtn", type: "radio", value: "blue"}
+-#   %label.purple-btn
+-#     %input{name: "colorBtn", type: "radio", value: "purple"}
+-# .submit
+-#   %label
+-#     %input{type: "submit"}
+-#     %i.far.fa-arrow-alt-circle-up.fa-lg.fa-fw{"aria-hidden" => "true"}

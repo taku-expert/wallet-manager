@@ -3,7 +3,7 @@ class CreateWallets < ActiveRecord::Migration[5.0]
     create_table :wallets do |t|
       t.string :title
       t.integer :price
-
+      
       t.timestamps
     end
   end
