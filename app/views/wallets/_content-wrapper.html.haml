@@ -24,7 +24,9 @@
           = f.label :price, class: 'form-price-mask' do
             = f.number_field :price, class: 'form-price', placeholder: 'いくらだったの？'
             = icon('fas', 'yen-sign', class: 'icon')
-          
+          = f.label :color, class: 'form-color-mask' do
+            = f.radio_button :color, 1 
+            = f.radio_button :color, 2
           = f.submit '登録', class: 'form__submit'
   .rightbox
     .rightbox-top.box
