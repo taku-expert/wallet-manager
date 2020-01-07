@@ -3,7 +3,7 @@
     .leftbox__top.box
       %p Taku
       .config-btn
-        = link_to edit_user_registration_path do
+        = link_to new_user_registration_path do
           %i.fas.fa-wrench
     .leftbox__form.box
       = form_for @wallet, url: wallets_path do |f|

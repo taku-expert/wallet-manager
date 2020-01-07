@@ -132,8 +132,8 @@
       border: solid 5px $yellow;
       padding: 20px;
       color: $yellow;
+      font-size: 28px;
       &-top {
-        font-size: 28px;
         p, span{
           font-size: 16px;
           color: black;
@@ -141,7 +141,6 @@
       }
       &-bottom {
         margin-top: 10px;
-        font-size: 28px;
         p, span{
           font-size: 16px;
           color: black;
@@ -153,18 +152,36 @@
       margin-top: 15px;
       border: solid 5px $purple;
       padding: 20px;
+      color: $purple;
+      font-size: 28px;
+      p, span {
+        font-size: 16px;
+        color: black;
+      }
     }
     &__blue {
       height: 20%;
       margin-top: 15px;
       border: solid 5px $blue;
       padding: 20px;
+      color: $blue;
+      font-size: 28px;
+      p, span {
+        font-size: 16px;
+        color: black;
+      }
     }
     &__pink {
       height: 20%;
       margin-top: 15px;
       border: solid 5px $pink;
       padding: 20px;
+      color: $pink;
+      font-size: 28px;
+      p, span {
+        font-size: 16px;
+        color: black;
+      }
     }
   }
 }
