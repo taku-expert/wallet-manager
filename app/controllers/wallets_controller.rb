@@ -6,12 +6,13 @@ class WalletsController < ApplicationController
   end
 
   def create
-    Wallet.create(wallet_params)
+    @wallet = Wallet.new(wallet_params)
+    @wallet.save
   end
 
   private
   def wallet_params
-    params.require(:wallet).permit(:title)
+    params.require(:wallet).permit(:title, :price, :color)
   end
 
 end
