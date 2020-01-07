@@ -1,5 +1,23 @@
-= link_to new_user_registration_path do
-  %p 新規登録
-  %br
-= link_to new_user_session_path do
-  %p ログイン
+.home
+  .home__title
+    %p Wallet Manager
+  .home__body
+    .home__body__left-box
+      = link_to new_user_registration_path do
+        %p 初めての方はこちら
+    .home__body__right-box
+      = link_to new_user_session_path do
+        %p ログイン
+
+
+
+  -# - if user_signed_in?
+  -#   = current_user.email
+  -#   = link_to destroy_user_session_path,  method: :delete do
+  -#     %p ログアウト
+  -# - else
+  -#   = link_to new_user_registration_path do
+  -#     %p 新規登録
+  -#     %br
+  -#   = link_to new_user_session_path do
+  -#     %p ログイン
