@@ -2,7 +2,9 @@ class WalletsController < ApplicationController
 
   def index
     @wallet = Wallet.new
-    @wallets = Wallet.all
+    @wallets = Wallet.all.order("created_at DESC")
+    @yellow = Wallet.all.sum(:price)
+    @purple = Wallet.find[:]
   end
 
   def create

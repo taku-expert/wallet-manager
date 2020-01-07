@@ -6,28 +6,45 @@
         = link_to edit_user_registration_path do
           %i.fas.fa-wrench
     .leftbox__form.box
-      .form
-        = form_for @wallet, url: wallets_path do |f|
-          = f.label :title, class: 'form-title-mask' do
-            = f.text_field :title, class: 'form-title', placeholder: '何を買ったの？'
-            = icon('fas', 'cart-plus', class: 'icon')
-          = f.label :price, class: 'form-price-mask' do
-            = f.text_field :price, class: 'form-price', placeholder: 'いくらだったの？'
-            = icon('fas', 'yen-sign', class: 'icon')
-          = f.label :color, class: 'form-color-mask' do
-            = f.radio_button :color, 1
-            = f.radio_button :color, 2
-          = f.submit '送信', class: 'form__submit'
+      = form_for @wallet, url: wallets_path do |f|
+        .form__mask__title
+          %p 購入した物を入力してください。
+          = f.text_field :title, class: 'title', placeholder: '(例) りんご'
+          -# = icon('fas', 'cart-plus', class: 'icon')
+        .form__mask__price
+          %p 金額を入力してください。
+          = f.text_field :price, class: 'price', placeholder: '(例) 200'
+          -# = icon('fas', 'yen-sign', class: 'icon')
+        .form__mask__color
+          = f.label :color, class: 'form__mask__color' do
+            .purple
+              = f.radio_button :color, 1, checked: "checked"
+              %span PURPLE
+            .blue
+              = f.radio_button :color, 2
+              %span BLUE
+            .pink
+              = f.radio_button :color, 3
+              %span PINK
+        = f.submit '登録', class: 'form__submit', id: 'submit'
+        -# :javascript
+        -#   $(function() {
+        -#     $('.radio_button').change(function() {
+        -#       $('.submit').text('');
+        -#     });
+        -#   });
   .contents
     .contents__main.box
       - @wallets.each do |wallet|
         .content
           .content__title
-            =wallet.title
+            = wallet.title
           .content__price
-            =wallet.price
+            = wallet.price
+            %span 円
   .rightbox
     .rightbox__yellow.box
+      = @yellow
     .rightbox__purple.box
-    .rightbox__green.box
+    .rightbox__blue.box
     .rightbox__pink.box
