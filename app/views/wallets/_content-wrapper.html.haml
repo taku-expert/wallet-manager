@@ -44,7 +44,23 @@
             %span 円
   .rightbox
     .rightbox__yellow.box
-      = @yellow
+      .rightbox__yellow-top
+        %p 残高設定金額
+        200000
+        %span 円
+      .rightbox__yellow-bottom
+        %p 入力された金額の合計
+        = @yellow
+        %span 円
     .rightbox__purple.box
+      %p PURPLEの合計金額
+      = @purple
+      %span 円
     .rightbox__blue.box
+      %p BLUEの合計金額
+      = @blue
+      %span 円
     .rightbox__pink.box
+      %P PINKの合計金額
+      = @pink
+      %span 円
