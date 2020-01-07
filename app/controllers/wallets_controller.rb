@@ -1,5 +1,8 @@
 class WalletsController < ApplicationController
 
+  def home
+  end
+
   def index
     @wallet = Wallet.new
     @wallets = Wallet.all.order("created_at DESC")
