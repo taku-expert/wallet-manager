@@ -1,7 +1,8 @@
 .contents__wrapper
   .leftbox
     .leftbox__top.box
-      %p Taku
+      .name-box
+        =current_user.name
       .config-btn
         = link_to new_user_registration_path do
           %i.fas.fa-wrench

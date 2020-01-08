@@ -1,4 +1,5 @@
 class WalletsController < ApplicationController
+  before_action :move_to_index, except: [:index, :show]
 
   def home
   end
@@ -28,5 +29,10 @@ class WalletsController < ApplicationController
   def wallet_params
     params.require(:wallet).permit(:title, :price, :color)
   end
+
+  def move_to_index
+    # redirect_to action: :home unless user_signed_in?
+  end
+
 
 end

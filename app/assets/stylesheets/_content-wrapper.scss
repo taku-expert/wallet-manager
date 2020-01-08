@@ -17,12 +17,10 @@
       display: flex;
       padding: 0 10px;
       justify-content: space-between;
-      p {
-        color: $gray;
-        font-size: 15px;
-        font-weight: 900;
+      .name-box {
+        color: black;
+        font-size: 18px;
         line-height: 50px;
-        // float: left;
         width: 100%;
         text-align: center;
       }

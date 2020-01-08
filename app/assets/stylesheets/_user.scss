@@ -11,11 +11,20 @@
     }
   }
   &__body {
-    padding-top: 100px;
+    padding-top: 50px;
     text-align: center;
     color: white;
+    .name-box {
+      font-size: 20px;
+      input {
+        height: 45px;
+        width: 400px;
+        padding-left: 15px;
+      }
+    }
     .email-box {
       font-size: 20px;
+      margin-top: 50px;
       input {
         height: 45px;
         width: 400px;
@@ -48,10 +57,17 @@
       }
     }
     .actions {
-      margin-top: 100px;
-      input {
+      margin-top: 50px;
+      .submit-btn {
         width: 400px;
-        font-size: 100px;
+        height: 40px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        &:hover {
+          border: solid 1px $gray;
+        }
       }
     }
   }
