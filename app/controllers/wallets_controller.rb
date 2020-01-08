@@ -5,19 +5,27 @@ class WalletsController < ApplicationController
   end
 
   def index
+
+    @user = User.find(current_user.id)
+
     @wallet = Wallet.new
-    @wallets = Wallet.all.order("created_at DESC")
+    @wallets = Wallet.where(user_id: "#{(current_user.id)}").order("created_at DESC")
     
-    @yellow = Wallet.all.sum(:price)
+    @yellow = Wallet.where(user_id: "#{(current_user.id)}").sum(:price)
     
-    @purples = Wallet.where(color: '1')
-    @purple = @purples.all.sum(:price)
+    @purples = Wallet.where(user_id: "#{(current_user.id)}")
+    @purple = @purples.where(color: '1').sum(:price)
 
     @blues = Wallet.where(color: '2')
-    @blue = @blues.all.sum(:price)
+    @blue = @blues.where(user_id: "(current_user.id)").sum(:price)
 
     @pinks = Wallet.where(color: '3')
     @pink = @pinks.all.sum(:price)
+
+    @balance = @user.balance
+    @par = @yellow / @balance
+    @parcent = @par * 100
+
   end
 
   def create

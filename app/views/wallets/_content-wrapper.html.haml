@@ -2,7 +2,7 @@
   .leftbox
     .leftbox__top.box
       .name-box
-        =current_user.name
+        = current_user.name
       .config-btn
         = link_to new_user_registration_path do
           %i.fas.fa-wrench
@@ -47,7 +47,7 @@
     .rightbox__yellow.box
       .rightbox__yellow-top
         %p 残高設定金額
-        200000
+        = current_user.balance
         %span 円
       .rightbox__yellow-bottom
         %p 入力された金額の合計

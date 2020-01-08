@@ -14,24 +14,31 @@
     padding-top: 50px;
     text-align: center;
     color: white;
-    .name-box {
-      font-size: 20px;
-      input {
-        height: 45px;
-        width: 400px;
-        padding-left: 15px;
-      }
-    }
-    .email-box {
-      font-size: 20px;
+    .field-box-top {
+      display: flex;
+      justify-content: center;
       margin-top: 50px;
-      input {
-        height: 45px;
-        width: 400px;
-        padding-left: 15px;
+      .name-box {
+        font-size: 20px;
+        input {
+          height: 45px;
+          width: 200px;
+          margin-top: 30px;
+          text-align: center;
+        }
+      }
+      .email-box {
+        font-size: 20px;
+        margin-left: 50px;
+        input {
+          height: 45px;
+          width: 400px;
+          margin-top: 30px;
+          text-align: center;
+        }
       }
     }
-    .password-box-wrapper {
+    .field-box-bottom {
       display: flex;
       justify-content: center;
       margin-top: 50px;
@@ -40,7 +47,8 @@
         input {
           height: 45px;
           width: 180px;
-          padding-left: 15px;
+          text-align: center;
+
         }
         em {
           font-size: 15px;
@@ -52,7 +60,17 @@
         input {
           height: 45px;
           width: 180px;
-          padding-left: 15px;
+          text-align: center;
+        }
+      }
+      .balance-box {
+        margin-left: 60px;
+        font-size: 20px;
+        input {
+          height: 45px;
+          width: 200px;
+          margin-top: 29px;
+          text-align: center;
         }
       }
     }
