@@ -1,0 +1,58 @@
+.user__home {
+  height: 100vh;
+  width: 100vw;
+  background-color: $gray;
+  padding-top: 100px;
+  &__title {
+    text-align: center;
+    color: white;
+    p {
+      font-size: 100px;
+    }
+  }
+  &__body {
+    padding-top: 100px;
+    text-align: center;
+    color: white;
+    .email-box {
+      font-size: 20px;
+      input {
+        height: 45px;
+        width: 400px;
+        padding-left: 15px;
+      }
+    }
+    .password-box-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      .password-box-left {
+        font-size: 20px;
+        input {
+          height: 45px;
+          width: 180px;
+          padding-left: 15px;
+        }
+        em {
+          font-size: 15px;
+        }
+      }
+      .password-box-right {
+        margin-left: 60px;
+        font-size: 20px;
+        input {
+          height: 45px;
+          width: 180px;
+          padding-left: 15px;
+        }
+      }
+    }
+    .actions {
+      margin-top: 100px;
+      input {
+        width: 400px;
+        font-size: 100px;
+      }
+    }
+  }
+}

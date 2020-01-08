@@ -1,0 +1,23 @@
+.user__home
+  .user__home__title
+    %p Wallet Manager
+  .user__home__body
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .field.email-box
+        %p メールアドレス
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      .password-box-wrapper
+        .field.password-box-left
+          %p パスワード
+          - if @minimum_password_length
+            %em
+              (英語と数字を含んだ#{@minimum_password_length}文字)
+          %br/
+          = f.password_field :password, autocomplete: "new-password"
+        .field.password-box-right
+          %p パスワード確認
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password"
+      .actions
+        = f.submit "Wallet Managerを始める"
