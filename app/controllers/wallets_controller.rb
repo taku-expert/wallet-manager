@@ -1,5 +1,5 @@
 class WalletsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index]
 
   def home
   end
@@ -10,21 +10,17 @@ class WalletsController < ApplicationController
 
     @wallet = Wallet.new
     @wallets = Wallet.where(user_id: "#{(current_user.id)}").order("created_at DESC")
-    
-    @yellow = Wallet.where(user_id: "#{(current_user.id)}").sum(:price)
-    
-    @purples = Wallet.where(user_id: "#{(current_user.id)}")
-    @purple = @purples.where(color: '1').sum(:price)
 
-    @blues = Wallet.where(color: '2')
-    @blue = @blues.where(user_id: "(current_user.id)").sum(:price)
+    # 各色によって分けられたそれぞれの金額の合計
+    @yellow = @wallets.sum(:price)
+    @purple = @wallets.where(color: '1').sum(:price)
+    @blue = @wallets.where(color: '2').sum(:price)
+    @pink = @wallets.where(color: '3').sum(:price)
 
-    @pinks = Wallet.where(color: '3')
-    @pink = @pinks.all.sum(:price)
-
+    # ( 設定された残高 / 入力金額の総合計 ) をして割合を算出
     @balance = @user.balance
-    @par = @yellow / @balance
-    @parcent = @par * 100
+    @calculation = ( @balance.to_f / @yellow ).to_f
+    @percentage = 100 / @calculation
 
   end
 
@@ -35,11 +31,11 @@ class WalletsController < ApplicationController
 
   private
   def wallet_params
-    params.require(:wallet).permit(:title, :price, :color)
+    params.require(:wallet).permit(:title, :price, :color).merge(user_id: current_user.id)
   end
 
   def move_to_index
-    # redirect_to action: :home unless user_signed_in?
+    redirect_to action: :home unless user_signed_in?
   end
 
 
