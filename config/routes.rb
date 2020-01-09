@@ -8,5 +8,7 @@ Rails.application.routes.draw do
       get 'home'
     end
   end
+
+  resources :users, only: [:edit, :update]
   
 end

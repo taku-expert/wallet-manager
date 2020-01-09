@@ -15,7 +15,7 @@
     &__top {
       height: 50px;
       display: flex;
-      padding: 0 10px;
+      padding: 0 20px;
       justify-content: space-between;
       .name-box {
         color: black;
@@ -26,10 +26,10 @@
       }
       .config-btn {
         float: right;
-        line-height: 50px;
+        height: 50px;
         i {
-          margin-top: 10px;
-          font-size: 30px;
+          line-height: 50px;
+          font-size: 20px;
           color: $gray;
         }
       }

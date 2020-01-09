@@ -1,0 +1,14 @@
+.user__home
+  .user__home__title
+    %p Wallet Manager
+  .user__home__body
+    = form_for(current_user) do |f|
+      .field-box-top
+        .field.name-box
+          %p 名前
+          = f.text_field :name, autofocus: true
+        .field.balance-box
+          %p 残高
+          = f.text_field :balance
+      .actions
+        = f.submit "更新する", class: 'submit-btn'
