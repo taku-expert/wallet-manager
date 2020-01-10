@@ -11,11 +11,9 @@
         .form__mask__title
           %p 購入した物を入力してください。
           = f.text_field :title, class: 'title', placeholder: '(例) りんご'
-          -# = icon('fas', 'cart-plus', class: 'icon')
         .form__mask__price
           %p 金額を入力してください。
           = f.text_field :price, class: 'price', placeholder: '(例) 200'
-          -# = icon('fas', 'yen-sign', class: 'icon')
         .form__mask__color
           = f.label :color, class: 'form__mask__color' do
             .purple
