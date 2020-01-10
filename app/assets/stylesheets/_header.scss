@@ -1,18 +1,42 @@
-.header-content{
+.header__content{
   width: 100%;
   height: 200px;
+  padding: 20px 20px 0;
   text-align: center;
   display: flex;
   justify-content: center;
-  .value {
-    font-size: 150px;
-    line-height: 200px;
-    color: #ffffff;
-    font-family: Noto Serif JP;
-  }
-  .p2 {
-    font-size: 20px;
-    color: #fff;
-    margin-top: 140px;
+  &-box {
+    height: 100%;
+    width: 100%;
+    border: solid 1px white;
+    border-radius: 10px;
+    background-color: #fff;
+    .value {
+      display: flex;
+      justify-content: space-around;
+      font-size: 60px;
+      font-family: Noto Serif JP;
+      &-yellow {
+        color: $yellow;
+        font-size: 100px;
+        line-height: 160px;
+      }
+      &-purple {
+        color: $purple;
+        margin-top: 54px;
+      }
+      &-blue {
+        color: $blue;
+        margin-top: 54px;
+      }
+      &-pink {
+        color: $pink;
+        margin-top: 54px;
+      }
+      span {
+        font-size: 20px;
+        color: $gray;
+      }
+    }
   }
 }

@@ -67,24 +67,25 @@
       }
       .form__mask__color {
         margin-top: 40px;
+        span {
+          margin-left: 10px;
+          font-size: 20px;
+        }
         .purple {
           height: 50px;
           span {
-            font-size: 20px;
             color: $purple;
           }
         }
         .blue {
           height: 50px;
           span {
-            font-size: 20px;
             color: $blue;
           }
         }
         .pink {
           height: 50px;
           span {
-            font-size: 20px;
             color: $pink;
           }
         }
