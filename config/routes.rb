@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     collection do
       get 'home'
       delete 'delete_purple'
+      delete 'delete_blue'
+      delete 'delete_pink'
     end
   end
 

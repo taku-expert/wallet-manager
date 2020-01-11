@@ -63,8 +63,23 @@ class WalletsController < ApplicationController
     redirect_to root_path
   end
 
+  def delete_blue
+    wallets = Wallet.where(user_id: "#{(current_user.id)}")
+    wallet = wallets.where(color: '2')
+    wallet.delete_all
+    redirect_to root_path
+  end
+
+  def delete_pink
+    wallets = Wallet.where(user_id: "#{(current_user.id)}")
+    wallet = wallets.where(color: '3')
+    wallet.delete_all
+    redirect_to root_path
+  end
+
 
   private
+  
   def wallet_params
     params.require(:wallet).permit(:title, :price, :color).merge(user_id: current_user.id)
   end
