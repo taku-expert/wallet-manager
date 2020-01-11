@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       delete 'delete_purple'
       delete 'delete_blue'
       delete 'delete_pink'
+      delete 'delete_all'
     end
   end
 

@@ -25,14 +25,7 @@
             .pink
               = f.radio_button :color, 3
               %span PINK
-            -# :javascript
-            -#   $(function() {
-            -#     $('.radio_button').change(function() {
-            -#       $('.submit').text('');
-            -#     });
-            -#   });
         = f.submit '登録', class: 'form__submit', id: 'submit'
-
   .contents
     .contents__main.box
       - @wallets.each do |wallet|
@@ -64,7 +57,6 @@
                 %span 円
             .delete-btn
               = link_to '削除', "/wallets/#{wallet.id}", method: :delete
-
   .rightbox
     .rightbox__yellow.box
       .rightbox__yellow-top
@@ -75,6 +67,7 @@
         %p 入力された金額の合計
         = @yellow
         %span 円
+        = link_to '削除', "/wallets/delete_all", method: :delete, class: "delete-btn"
     .rightbox__purple.box
       %p PURPLEの合計金額
       = @purple
