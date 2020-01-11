@@ -79,15 +79,15 @@
       %p PURPLEの合計金額
       = @purple
       %span 円
-      = link_to '削除', "/wallets/delete_purple", method: :delete, class: "sakujyo"
+      = link_to '削除', "/wallets/delete_purple", method: :delete, class: "delete-btn"
     .rightbox__blue.box
       %p BLUEの合計金額
       = @blue
       %span 円
-      = link_to '削除', "/wallets/delete_purple", method: :delete
+      = link_to '削除', "/wallets/delete_purple", method: :delete, class: "delete-btn"
 
     .rightbox__pink.box
       %P PINKの合計金額
       = @pink
       %span 円
-      = link_to '削除', "/wallets/delete_purple", method: :delete
+      = link_to '削除', "/wallets/delete_purple", method: :delete, class: "delete-btn"

@@ -155,6 +155,17 @@
   .rightbox {
     height: 100%;
     width: 400px;
+    .delete-btn {
+      color:$gray;
+      line-height: 50px;
+      font-size: 14px;
+      text-decoration: none;
+      float: right;
+      margin-right: 15px;
+      &:hover {
+        color: black;
+      }
+    }
     &__yellow {
       height: calc(40% - 45px);
       border: solid 5px $yellow;
