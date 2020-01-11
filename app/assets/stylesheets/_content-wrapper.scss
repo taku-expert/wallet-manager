@@ -111,15 +111,43 @@
         height: 50px;
         border-bottom: solid 1px $gray;
         display: flex;
+        justify-content: space-between;
         margin-bottom: 20px;
-        color: $yellow;
-        &__title {
-          margin-left: 15px;
-          font-size: 30px;
+        &__box {
+          display: flex;
+          #purple {
+            color: $purple;
+          }
+          #blue {
+            color: $blue;
+          }
+          #pink {
+            color: $pink;
+          }
+          span {
+            color: black;
+            font-size: 15px;
+          }
+          &-title {
+            margin-left: 15px;
+            font-size: 30px;
+          }
+          &-price {
+            margin: 10px 0 0 50px;
+            font-size: 20px;
+          }
         }
-        &__price {
-          margin: 10px 0 0 30px;
-          font-size: 20px;
+        .delete-btn {
+          margin-right: 30px;
+          a {
+            color:$gray;
+            line-height: 50px;
+            font-size: 14px;
+            text-decoration: none;
+            &:hover {
+              color: black;
+            }
+          }
         }
       }
     }

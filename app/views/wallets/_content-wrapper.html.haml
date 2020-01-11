@@ -25,22 +25,46 @@
             .pink
               = f.radio_button :color, 3
               %span PINK
+            -# :javascript
+            -#   $(function() {
+            -#     $('.radio_button').change(function() {
+            -#       $('.submit').text('');
+            -#     });
+            -#   });
         = f.submit '登録', class: 'form__submit', id: 'submit'
-        -# :javascript
-        -#   $(function() {
-        -#     $('.radio_button').change(function() {
-        -#       $('.submit').text('');
-        -#     });
-        -#   });
+
   .contents
     .contents__main.box
       - @wallets.each do |wallet|
         .content
-          .content__title
-            = wallet.title
-          .content__price
-            = wallet.price
-            %span 円
+          - if wallet.color == 1
+            .content__box
+              #purple.content__box-title
+                = wallet.title
+              #purple.content__box-price
+                = wallet.price
+                %span 円
+            .delete-btn
+              = link_to '削除', "/wallets/#{wallet.id}", method: :delete
+          - elsif wallet.color == 2
+            .content__box
+              #blue.content__box-title
+                = wallet.title
+              #blue.content__box-price
+                = wallet.price
+                %span 円
+            .delete-btn
+              = link_to '削除', "/wallets/#{wallet.id}", method: :delete
+          - else
+            .content__box
+              #pink.content__box-title
+                = wallet.title
+              #pink.content__box-price
+                = wallet.price
+                %span 円
+            .delete-btn
+              = link_to '削除', "/wallets/#{wallet.id}", method: :delete
+
   .rightbox
     .rightbox__yellow.box
       .rightbox__yellow-top
@@ -55,11 +79,15 @@
       %p PURPLEの合計金額
       = @purple
       %span 円
+      = link_to '削除', "/wallets/delete_purple", method: :delete, class: "sakujyo"
     .rightbox__blue.box
       %p BLUEの合計金額
       = @blue
       %span 円
+      = link_to '削除', "/wallets/delete_purple", method: :delete
+
     .rightbox__pink.box
       %P PINKの合計金額
       = @pink
       %span 円
+      = link_to '削除', "/wallets/delete_purple", method: :delete

@@ -1,6 +1,6 @@
 class WalletsController < ApplicationController
 
-  before_action :move_to_index, except: [:home, :index, :create]
+  before_action :move_to_index, except: :index
 
   def home
   end
@@ -47,6 +47,19 @@ class WalletsController < ApplicationController
   def create
     @wallet = Wallet.new(wallet_params)
     @wallet.save
+    redirect_to root_path
+  end
+
+  def destroy
+    wallet = Wallet.find(params[:id])
+    wallet.delete
+    redirect_to root_path
+  end
+
+  def delete_purple
+    wallets = Wallet.where(user_id: "#{(current_user.id)}")
+    wallet = wallets.where(color: '1')
+    wallet.delete_all
     redirect_to root_path
   end
 
