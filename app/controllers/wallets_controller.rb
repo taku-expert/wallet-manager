@@ -1,6 +1,6 @@
 class WalletsController < ApplicationController
 
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: :home
 
   def home
   end
@@ -40,7 +40,12 @@ class WalletsController < ApplicationController
 
       # 端数分は@purpleに足すこととする。
       @rem = (100 - @purple_per.floor - @blue_per.floor - @pink_per.floor )
-      @purple_per_total = @purple_per + @rem
+      if @purple == 0
+        @blue_per = @blue_per + @rem
+        @purple_per_total = 0
+      else
+        @purple_per_total = @purple_per + @rem
+      end
     end
   end
 

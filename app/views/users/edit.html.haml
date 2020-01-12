@@ -11,4 +11,6 @@
           %p 残高
           = f.text_field :balance
       .actions
-        = f.submit "更新する", class: 'submit-btn'
+        = f.submit "設定する", class: "submit-btn"
+      .signout
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "signout-btn"

@@ -88,6 +88,26 @@
         }
       }
     }
+    .signout {
+      margin: 50px auto 0;
+      width: 400px;
+      height: 40px;
+      border-radius: 5px;
+      background-color: white;
+      &-btn {
+        display: block;
+        line-height: 40px;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        color: black;
+        &:hover {
+          border: solid 1px $gray;
+          border-radius: 5px;
+        }
+      }
+
+    }
   }
 }
 
@@ -99,6 +119,25 @@
     height: 45px;
     width: 200px;
     margin-top: 29px;
+    text-align: center;
+  }
+}
+
+// sign in
+.signin-email-box {
+  font-size: 20px;
+  input {
+    height: 45px;
+    width: 400px;
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+.signin-password-box {
+  font-size: 20px;
+  input {
+    height: 45px;
+    width: 400px;
     text-align: center;
   }
 }
