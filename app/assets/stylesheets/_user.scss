@@ -106,7 +106,6 @@
           border-radius: 5px;
         }
       }
-
     }
   }
 }
@@ -129,7 +128,7 @@
   input {
     height: 45px;
     width: 400px;
-    margin-top: 30px;
+    margin-top: 15px;
     text-align: center;
   }
 }
@@ -138,6 +137,25 @@
   input {
     height: 45px;
     width: 400px;
+    margin-top: 15px;
     text-align: center;
+  }
+}
+.actions-newpage {
+  margin: 50px auto 0;
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: white;
+  a {
+    line-height: 40px;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+  }
+  &:hover {
+    border: solid 1px $gray;
+    border-radius: 5px;
   }
 }

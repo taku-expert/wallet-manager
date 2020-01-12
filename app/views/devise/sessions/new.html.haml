@@ -13,9 +13,6 @@
           = f.password_field :password, autocomplete: "new-password"
       .actions
         = f.submit "ログインします", class: "submit-btn"
-      .actions
+      .actions-newpage
         = link_to new_user_registration_path do
           %p 初めての方はこちら
-
-
-        
