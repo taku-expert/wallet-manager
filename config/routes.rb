@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   resources :wallets, only: [:index, :create, :destroy] do
     collection do
-      get 'home'
       delete 'delete_purple'
       delete 'delete_blue'
       delete 'delete_pink'

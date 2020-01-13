@@ -2,9 +2,6 @@ class WalletsController < ApplicationController
 
   before_action :move_to_index, except: :home
 
-  def home
-  end
-
   def index
     @user = User.find(current_user.id)
 
