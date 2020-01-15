@@ -2,6 +2,7 @@ class WalletsController < ApplicationController
 
   before_action :move_to_index, except: :home
 
+  
   def index
     @user = User.find(current_user.id)
 
@@ -63,7 +64,6 @@ class WalletsController < ApplicationController
     wallets.delete_all
     redirect_to root_path
   end
-
 
   def delete_purple
     wallets = Wallet.where(user_id: "#{(current_user.id)}")
