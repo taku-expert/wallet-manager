@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20191201135916) do
   end
 
   create_table "wallets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title"
+    t.string   "title",      null: false
     t.integer  "price"
     t.integer  "color"
     t.integer  "user_id"
