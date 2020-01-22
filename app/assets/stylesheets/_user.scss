@@ -1,0 +1,161 @@
+.user__home {
+  height: 100vh;
+  width: 100vw;
+  background-color: $gray;
+  padding-top: 100px;
+  &__title {
+    text-align: center;
+    color: white;
+    p {
+      font-size: 100px;
+    }
+  }
+  &__body {
+    padding-top: 50px;
+    text-align: center;
+    color: white;
+    .field-box-top {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      .name-box {
+        font-size: 20px;
+        input {
+          height: 45px;
+          width: 200px;
+          margin-top: 30px;
+          text-align: center;
+        }
+      }
+      .email-box {
+        font-size: 20px;
+        margin-left: 50px;
+        input {
+          height: 45px;
+          width: 400px;
+          margin-top: 30px;
+          text-align: center;
+        }
+      }
+    }
+    .field-box-bottom {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      .password-box-left {
+        font-size: 20px;
+        input {
+          height: 45px;
+          width: 180px;
+          text-align: center;
+
+        }
+        em {
+          font-size: 15px;
+        }
+      }
+      .password-box-right {
+        margin-left: 60px;
+        font-size: 20px;
+        input {
+          height: 45px;
+          width: 180px;
+          text-align: center;
+        }
+      }
+      .balance-box {
+        margin-left: 60px;
+        font-size: 20px;
+        input {
+          height: 45px;
+          width: 200px;
+          margin-top: 29px;
+          text-align: center;
+        }
+      }
+    }
+    .actions {
+      margin-top: 50px;
+      .submit-btn {
+        width: 400px;
+        height: 40px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        &:hover {
+          border: solid 1px $gray;
+        }
+      }
+    }
+    .signout {
+      margin: 50px auto 0;
+      width: 400px;
+      height: 40px;
+      border-radius: 5px;
+      background-color: white;
+      &-btn {
+        display: block;
+        line-height: 40px;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        color: black;
+        &:hover {
+          border: solid 1px $gray;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+// editアクションのため
+.balance-box {
+  margin-left: 60px;
+  font-size: 20px;
+  input {
+    height: 45px;
+    width: 200px;
+    margin-top: 29px;
+    text-align: center;
+  }
+}
+
+// sign in
+.signin-email-box {
+  font-size: 20px;
+  input {
+    height: 45px;
+    width: 400px;
+    margin-top: 15px;
+    text-align: center;
+  }
+}
+.signin-password-box {
+  font-size: 20px;
+  input {
+    height: 45px;
+    width: 400px;
+    margin-top: 15px;
+    text-align: center;
+  }
+}
+.actions-newpage {
+  margin: 50px auto 0;
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: white;
+  a {
+    line-height: 40px;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+  }
+  &:hover {
+    border: solid 1px $gray;
+    border-radius: 5px;
+  }
+}

@@ -1,5 +1,15 @@
-.header-content
-  .value
-    %p.p1 98
-  .percent
-    %p.p2 %
+.header__content
+  .header__content-box
+    .value
+      .value-yellow
+        = @yellow_per.floor
+        %span %
+      .value-purple
+        = @purple_per_total.floor
+        %span %
+      .value-blue
+        = @blue_per.floor
+        %span %
+      .value-pink
+        = @pink_per.floor
+        %span %

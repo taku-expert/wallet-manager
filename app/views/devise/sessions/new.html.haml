@@ -1,0 +1,18 @@
+.user__home
+  .user__home__title
+    %p Wallet Manager
+  .user__home__body
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field-box-top
+        .signin-email-box
+          %p メールアドレス
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+      .field-box-bottom
+        .signin-password-box
+          %p パスワード
+          = f.password_field :password, autocomplete: "new-password"
+      .actions
+        = f.submit "ログインします", class: "submit-btn"
+      .actions-newpage
+        = link_to new_user_registration_path do
+          %p 初めての方はこちら
