@@ -27,12 +27,6 @@
               = f.radio_button :color, 3
               %span PINK
         = f.submit '登録', class: 'form__submit', id: 'submit'
-        -# :javascript
-        -#   $(function() {
-        -#     $('.radio_button').change(function() {
-        -#       $('.submit').text('');
-        -#     });
-        -#   });
   .contents
     .contents__main.box
       - @wallets.each do |wallet|
