@@ -1,241 +1,226 @@
-.contents-wrapper {
+.contents__wrapper {
   height: calc(100% - 200px);
   width: 100%;
   display: flex;
   padding: 20px;
 
   .box {
-    background-color: #ffffffa6;
+    background-color: #ffffff;
+    border-radius: 10px;
   }
 
   .leftbox {
     height: 100%;
-    width: 300px;
-    &-top {
+    width: 500px;
+    &__top {
       height: 50px;
       display: flex;
-      padding: 0 10px;
+      padding: 0 20px;
       justify-content: space-between;
-      p {
-        color: #272c32;
-        font-size: 15px;
-        font-weight: 900;
+      .name-box {
+        color: black;
+        font-size: 18px;
         line-height: 50px;
-        // float: left;
         width: 100%;
         text-align: center;
       }
       .config-btn {
         float: right;
-        line-height: 50px;
+        height: 50px;
         i {
-          margin-top: 10px;
-          font-size: 30px;
-          color: #272c32;
+          line-height: 50px;
+          font-size: 20px;
+          color: $gray;
         }
       }
     }
-    &-middle {
-      height: calc(50% - 65px);
+    &__form {
+      padding: 20px;
       margin-top: 15px;
-      border: solid 10px #f4aa31;
-    }
-    &-bottom {
-      height: 50%;
-      margin-top: 15px;
-      border: solid 10px #d375ef;
+      height: calc(100% - 65px);
+      .form__mask__title {
+        p {
+          font-size: 16px;
+        }
+        .title {
+          margin-top: 10px;
+          padding-left: 10px;
+          height: 50px;
+          width: 100%;
+          font-size: 15px;
+          border: solid 1px $gray;
+        }
+      }
+      .form__mask__price {
+        margin-top: 20px;
+        p {
+          font-size: 16px;
+        }
+        .price {
+          margin-top: 10px;
+          padding-left: 10px;
+          height: 50px;
+          width: 100%;
+          font-size: 15px;
+          border: solid 1px $gray;
+        }
+      }
+      .form__mask__color {
+        margin-top: 40px;
+        span {
+          margin-left: 10px;
+          font-size: 20px;
+        }
+        .purple {
+          height: 50px;
+          span {
+            color: $purple;
+          }
+        }
+        .blue {
+          height: 50px;
+          span {
+            color: $blue;
+          }
+        }
+        .pink {
+          height: 50px;
+          span {
+            color: $pink;
+          }
+        }
+      }
+      .form__submit {
+        width: 100%;
+        border-style: none;
+        height: 100px;
+        font-size: 16px;
+        border: solid 2px $gray;
+      }
     }
   }
   .contents {
     height: 100%;
     width: 100%;
     margin: 0 10px;
-    &-main {
-      height: calc(100% - 50px);
+    &__main {
+      height: 100%;
       padding: 15px;
+      overflow: scroll;
       .content {
-        height: 60px;
-        text-align: center;
+        height: 50px;
+        border-bottom: solid 1px $gray;
         display: flex;
-        justify-content: flex-start;
-        &-title {
-          position: absolute;
-          font-size: 30px;
-          color: #f4aa31;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        &__box {
+          display: flex;
+          #purple {
+            color: $purple;
+          }
+          #blue {
+            color: $blue;
+          }
+          #pink {
+            color: $pink;
+          }
+          span {
+            color: black;
+            font-size: 15px;
+          }
+          &-title {
+            margin-left: 15px;
+            font-size: 30px;
+          }
+          &-price {
+            margin: 10px 0 0 50px;
+            font-size: 20px;
+          }
         }
-        &-price {
-          position: relative;
-          right: -115px;
-          top: 10px;
-          font-size: 20px;
-          color: #f4aa31;
+        .delete-btn {
+          margin-right: 30px;
+          a {
+            color:$gray;
+            line-height: 50px;
+            font-size: 14px;
+            text-decoration: none;
+            &:hover {
+              color: black;
+            }
+          }
         }
-      }
-    }
-    .contents-bottom {
-      height: 50px;
-      margin-top: 10px;
-      padding: 5px;
-      .form {
-        height: 40px;
-        display: flex;
-
-
-
       }
     }
   }
   .rightbox {
     height: 100%;
-    width: 300px;
-    &-top {
-      height: 50%;
-      border: solid 10px #48bfbb;
+    width: 400px;
+    .delete-btn {
+      color:$gray;
+      line-height: 50px;
+      font-size: 14px;
+      text-decoration: none;
+      float: right;
+      margin-right: 15px;
+      &:hover {
+        color: black;
+      }
     }
-    &-bottom {
-      height: 50%;
+    &__yellow {
+      height: calc(40% - 45px);
+      border: solid 5px $yellow;
+      padding: 20px;
+      color: $yellow;
+      font-size: 28px;
+      &-top {
+        p, span{
+          font-size: 16px;
+          color: black;
+        }
+      }
+      &-bottom {
+        margin-top: 10px;
+        p, span{
+          font-size: 16px;
+          color: black;
+        }
+      }
+    }
+    &__purple {
+      height: 20%;
       margin-top: 15px;
-      border: solid 10px #f87481;
+      border: solid 5px $purple;
+      padding: 20px;
+      color: $purple;
+      font-size: 28px;
+      p, span {
+        font-size: 16px;
+        color: black;
+      }
+    }
+    &__blue {
+      height: 20%;
+      margin-top: 15px;
+      border: solid 5px $blue;
+      padding: 20px;
+      color: $blue;
+      font-size: 28px;
+      p, span {
+        font-size: 16px;
+        color: black;
+      }
+    }
+    &__pink {
+      height: 20%;
+      margin-top: 15px;
+      border: solid 5px $pink;
+      padding: 20px;
+      color: $pink;
+      font-size: 28px;
+      p, span {
+        font-size: 16px;
+        color: black;
+      }
     }
   }
 }
-
-//   .pink {
-//     color: #f87481;
-//   }
-//   .blue {
-//     color: #48bfbb;
-//   }
-//   .orange {
-//     color: #f4aa31;
-//   }
-//   .purple {
-//     color: #d375ef;
-//   }
-// }
-
-
-// .title {
-//   width: 100%;
-//   height: 40px;
-//   position: relative;
-//   input[type='text'] {
-//     font-size: 15px;
-//     line-height: 30px;
-//     width: 100%;
-//     padding-left: 40px;
-//     letter-spacing: 1px;
-//     border: 0;
-//     margin-top: 5px;
-//     background-color: transparent;
-//     &:focus {
-//       outline: none;
-//     }
-//   }
-//   i {
-//     position: absolute;
-//     top: 13px;
-//     left: 5px;
-//     padding-right: 5px;
-//   }
-//   &::after {
-//     display: block;
-//     width: 100%;
-//     height: 4px;
-//     margin-top: -5px;
-//     content: '';
-//     border-width: 0 2px 1px 2px;
-//     border-style: solid;
-//     border-color: #272c32;
-//   }
-// }
-// .price {
-//   width: 300px;
-//   height: 40px;
-//   margin-left: 10px;
-//   position: relative;
-//   input[type=number]::-webkit-inner-spin-button,
-//   input[type=number]::-webkit-outer-spin-button {
-//   -webkit-appearance: none;
-//   margin: 0;
-//   }
-//   input[type='number'] {
-//     font-size: 15px;
-//     line-height: 30px;
-//     width: 100%;
-//     padding-left: 30px;
-//     letter-spacing: 1px;
-//     border: 0;
-//     margin-top: 5px;
-//     background-color: transparent;
-//     &:focus {
-//       outline: none;
-//     }
-//   }
-//   i {
-//     position: absolute;
-//     top: 13px;
-//     left: 5px;
-//     padding-right: 5px;
-//   }
-//   &::after {
-//     display: block;
-//     width: 100%;
-//     height: 4px;
-//     margin-top: -5px;
-//     content: '';
-//     border-width: 0 2px 1px 2px;
-//     border-style: solid;
-//     border-color: #272c32;
-//   }
-// }
-// .radioBtn {
-//   width: 300px;
-//   height: 40px;
-//   display: flex;
-//   justify-content: space-between;
-//   margin-left: 20px;
-//   align-items: center;
-//   label {
-//     height: 40px;
-//     width: 40px;
-//     border-radius: 20px;
-//     margin: 0 5px;
-//     display: flex;
-//     cursor: pointer;
-//     &:hover {
-//       width: 80%;
-//     }
-//     input[type="radio"] {
-//       height: 40px;
-//       margin: 0 auto;
-//       &:checked {
-//         height: 40px;
-//         width: 80%;
-//         display: none;
-//       }
-//     }
-//   }
-//   .pink-btn {
-//     background-color: #f87481;
-//   }
-//   .blue-btn {
-//     background-color: #48bfbb;
-//   }
-//   .purple-btn {
-//     background-color: #d375ef;
-//   }
-// }
-// .submit {
-//   width: 90px;
-//   height: 40px;
-//   margin-left: 10px;
-//   input {
-//     display: none;
-//   }
-//   i {
-//     cursor: pointer;
-//     font-size: 40px;
-//     line-height: 40px;
-//   }
-// }

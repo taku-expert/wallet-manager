@@ -1,51 +1,85 @@
-.contents-wrapper
+.contents__wrapper
   .leftbox
-    .leftbox-top.box
-      %p Taku
+    .leftbox__top.box
+      .name-box
+        = current_user.name
       .config-btn
-        = link_to edit_user_registration_path do
-          %i.fas.fa-wrench
-    .leftbox-middle.box
-    .leftbox-bottom.box
+        = link_to edit_user_path(current_user) do
+          %i.fas.fa-user-cog
+    .leftbox__form.box
+      = form_for @wallet, url: wallets_path do |f|
+        .form__mask__title
+          %p 購入した物を入力してください。
+          = f.text_field :title, class: 'title', placeholder: '(例) りんご'
+        .form__mask__price
+          %p 金額を入力してください。
+          = f.text_field :price, class: 'price', placeholder: '(例) 200'
+        .form__mask__color
+          = f.label :color, class: 'form__mask__color' do
+            .purple
+              = f.radio_button :color, 1, checked: "checked"
+              %span PURPLE
+            .blue
+              = f.radio_button :color, 2
+              %span BLUE
+            .pink
+              = f.radio_button :color, 3
+              %span PINK
+        = f.submit '登録', class: 'form__submit', id: 'submit'
   .contents
-    .contents-main.box
-      -@wallets.each do |wallet|
+    .contents__main.box
+      - @wallets.each do |wallet|
         .content
-          .content-title
-            =wallet.title
-          .content-price
-            =wallet.price
-    .contents-bottom.box
-      .form
-        = form_for @wallet, url: wallets_path do |f|
-          = f.label :title, class: 'form-title-mask' do
-            = f.text_field :title, class: 'form-title', placeholder: '何を買ったの？'
-            = icon('fas', 'cart-plus', class: 'icon')
-          = f.label :price, class: 'form-price-mask' do
-            = f.number_field :price, class: 'form-price', placeholder: 'いくらだったの？'
-            = icon('fas', 'yen-sign', class: 'icon')
-          = f.label :color, class: 'form-color-mask' do
-            = f.radio_button :color, 1 
-            = f.radio_button :color, 2
-          = f.submit '登録', class: 'form__submit'
+          - if wallet.color == 1
+            .content__box
+              #purple.content__box-title
+                = wallet.title
+              #purple.content__box-price
+                = wallet.price
+                %span 円
+            .delete-btn
+              = link_to '削除', "/wallets/#{wallet.id}", method: :delete
+          - elsif wallet.color == 2
+            .content__box
+              #blue.content__box-title
+                = wallet.title
+              #blue.content__box-price
+                = wallet.price
+                %span 円
+            .delete-btn
+              = link_to '削除', "/wallets/#{wallet.id}", method: :delete
+          - else
+            .content__box
+              #pink.content__box-title
+                = wallet.title
+              #pink.content__box-price
+                = wallet.price
+                %span 円
+            .delete-btn
+              = link_to '削除', "/wallets/#{wallet.id}", method: :delete
   .rightbox
-    .rightbox-top.box
-    .rightbox-bottom.box
-
--# .title
--#   %input{type: "text",placeholder: "何を買ったの？"}
--#   %i.fas.fa-cart-plus.fa-lg.fa-fw{"aria-hidden" => "true"}
--# .price
--#   %input{type: "number",placeholder: "いくらだったの？"}
--#   %i.fas.fa-yen-sign.fa-lg.fa-fw{"aria-hidden" => "true"}
--# .radioBtn
--#   %label.pink-btn
--#     %input{name: "colorBtn", type: "radio", value: "pink"} 
--#   %label.blue-btn
--#     %input{name: "colorBtn", type: "radio", value: "blue"}
--#   %label.purple-btn
--#     %input{name: "colorBtn", type: "radio", value: "purple"}
--# .submit
--#   %label
--#     %input{type: "submit"}
--#     %i.far.fa-arrow-alt-circle-up.fa-lg.fa-fw{"aria-hidden" => "true"}
+    .rightbox__yellow.box
+      .rightbox__yellow-top
+        %p 残高設定金額
+        = current_user.balance
+        %span 円
+      .rightbox__yellow-bottom
+        %p 入力された金額の合計
+        = @yellow
+        %span 円
+        = link_to '削除', "/wallets/delete_all", method: :delete, class: "delete-btn"
+    .rightbox__purple.box
+      %p PURPLEの合計金額
+      = @purple
+      %span 円
+      = link_to '削除', "/wallets/delete_purple", method: :delete, class: "delete-btn"
+    .rightbox__blue.box
+      %p BLUEの合計金額
+      = @blue
+      %span 円
+      = link_to '削除', "/wallets/delete_blue", method: :delete, class: "delete-btn"
+    .rightbox__pink.box
+      %P PINKの合計金額
+      = @pink
+      %span 円
+      = link_to '削除', "/wallets/delete_pink", method: :delete, class: "delete-btn"
