@@ -21,7 +21,7 @@ class WalletsController < ApplicationController
     @yellow_cal = ( @balance.to_f / @yellow ).to_f
     @yellow_per = 100 / @yellow_cal
 
-    # DBが空の場合は計算ができないため結果を"0"として表示
+    # 初期状態ではDBが空のため、エラー対策としてデフォルト値を0とする。
     if @yellow == 0
       @purple_per_total = 0
       @blue_per = 0
@@ -36,7 +36,7 @@ class WalletsController < ApplicationController
       @pink_cal = ( @yellow.to_f / @pink ).to_f
       @pink_per = 100 / @pink_cal
 
-      # 端数分は@purpleに足すこととする。
+      # 端数分は@purpleに足し、3色の合計が100%になるよう調整
       @rem = (100 - @purple_per.floor - @blue_per.floor - @pink_per.floor )
       if @purple == 0
         @blue_per = @blue_per + @rem
@@ -49,8 +49,10 @@ class WalletsController < ApplicationController
 
   def create
     @wallet = Wallet.new(wallet_params)
-    @wallet.save
-    redirect_to root_path
+    if @wallet.valid?
+      @wallet.save
+      redirect_to root_path
+    end
   end
 
   def destroy
