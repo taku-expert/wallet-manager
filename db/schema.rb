@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 20191201135916) do
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                                null: false
-    t.integer  "balance",                             null: false
+    t.string   "name",                   default: "", null: false
+    t.integer  "balance"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20191201135916) do
   end
 
   create_table "wallets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title",      null: false
-    t.integer  "price",      null: false
+    t.string   "title"
+    t.integer  "price"
     t.integer  "color"
     t.integer  "user_id"
     t.datetime "created_at", null: false

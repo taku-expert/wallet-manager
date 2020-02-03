@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
+  # ログイン済ユーザーのみにアクセスを許可
   before_action :authenticate_user!
+  # gem devise関連の遷移を行った際
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected

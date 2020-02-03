@@ -1,5 +1,7 @@
 class WalletsController < ApplicationController
 
+  # # ログイン済ユーザーのみにアクセスを許可
+  # before_action :authenticate_user!
   before_action :move_to_index, except: :home
 
   
@@ -51,6 +53,8 @@ class WalletsController < ApplicationController
     @wallet = Wallet.new(wallet_params)
     if @wallet.valid?
       @wallet.save
+      redirect_to root_path
+    else
       redirect_to root_path
     end
   end
